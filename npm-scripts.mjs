@@ -52,14 +52,14 @@ async function run() {
         //
         // So here we compile TypeScript to JavaScript.
         case 'prepare': {
-            buildTypescript({ force: false });
+            buildRollup({ force: false });
             replaceVersion();
 
             break;
         }
 
-        case 'typescript:build': {
-            buildTypescript({ force: true });
+        case 'rollup:build': {
+            buildRollup({ force: true });
             replaceVersion();
 
             break;
@@ -102,7 +102,7 @@ function replaceVersion() {
 }
 
 function deleteLib() {
-    if (!fs.existsSync('lib')) {
+    if (!fs.existsSync('dist')) {
         return;
     }
 
@@ -111,17 +111,15 @@ function deleteLib() {
     fs.rmSync('dist', { recursive: true, force: true });
 }
 
-function buildTypescript({ force }) {
+function buildRollup(force) {
     if (!force && fs.existsSync('dist')) {
         return;
     }
-
-    logInfo('buildTypescript()');
+    logInfo('buildRollup()')
 
     deleteLib();
 
-    // Generate .js CommonJS code and .d.ts TypeScript declaration files in lib/.
-    executeCmd(`tsc ${taskArgs}`);
+    executeCmd('rollup -c')
 }
 
 function release() {

@@ -10,10 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "rollup -c",
-    "prepublish": "npm run build",
-    "typescript:build": "node npm-scripts.mjs typescript:build",
+    "build": "node npm-scripts.mjs rollup:build",
     "release": "node npm-scripts.mjs release"
   },
   "license": "MIT",
@@ -34,7 +31,6 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "typescript": "^5.2.2",
     "tslib": "^2.6.2",
-    "rimraf": "^3.0.2",
     "vue": "^2.6.14"
   }
 }

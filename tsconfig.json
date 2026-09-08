@@ -8,7 +8,7 @@
       "DOM"
     ],
     "declaration": true,
-    "declarationDir": "dist",
+    "declarationDir": "dist/types",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
