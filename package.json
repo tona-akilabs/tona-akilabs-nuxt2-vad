@@ -1,0 +1,32 @@
+{
+  "name": "@tona-akilabs/nuxt2-vad",
+  "version": "1.0.0",
+  "description": "Vue 2 wrapper for @ricky0123/vad-web",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@ricky0123/vad-web": "^0.0.30",
+    "onnxruntime-web": "^1.29.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.0"
+  },
+  "devDependencies": {
+    "rollup": "^3.30.0",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "typescript": "^5.2.2",
+    "tslib": "^2.6.2",
+    "vue": "^2.6.14"
+  }
+}
