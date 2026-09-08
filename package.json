@@ -1,6 +1,6 @@
 {
   "name": "@tona-akilabs/nuxt2-vad",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Vue 2 wrapper for @ricky0123/vad-web",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -10,7 +10,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c"
+    "clean": "rimraf dist",
+    "build": "rollup -c",
+    "prepublish": "npm run build",
+    "typescript:build": "node npm-scripts.mjs typescript:build",
+    "release": "node npm-scripts.mjs release"
   },
   "license": "MIT",
   "dependencies": {
@@ -20,6 +24,9 @@
   "peerDependencies": {
     "vue": "^2.6.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "rollup": "^3.30.0",
     "@rollup/plugin-typescript": "^11.1.6",
@@ -27,6 +34,7 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "typescript": "^5.2.2",
     "tslib": "^2.6.2",
+    "rimraf": "^3.0.2",
     "vue": "^2.6.14"
   }
 }
